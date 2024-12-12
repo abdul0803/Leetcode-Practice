@@ -1,22 +1,18 @@
 /**
- * @param {number[]} nums
- * @return {void} Do not return anything, modify nums in-place instead.
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
  */
-var moveZeroes = function(nums) {
-    let low = 0;
-    let high = low + 1;
+var isSubsequence = function(s, t) {
+    let sp = 0;
+    let tp = 0;
 
-    while (high <= nums.length - 1) {
-        if (nums[low] !== 0) {
-            low++;
-            high++;
-        } else {
-            if (nums[high] !== 0) {
-                [nums[low], nums[high]] = [nums[high], nums[low]];
-                low++;
-            }
-            high++;
+    while (sp < s.length && tp < t.length) {
+        if (s[sp] === t[tp]) {
+            sp++;
         }
+        tp++;
     }
 
+    return sp === s.length;    
 };
