@@ -1,7 +1,3 @@
-/**
- * @param {number[]} height
- * @return {number}
- */
 
 /*
 We want to find two vertical lines that can hold the most water between them. 
